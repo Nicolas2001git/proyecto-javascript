@@ -67,7 +67,7 @@ function pasajeproceso() {
     break;
   default:
     alert("País no disponible. Intenta de nuevo.");
-    pasajeproceso();
+    return;
   }
   alert("Consulta la consola del navegador para ver los destinos y precios. No te preocupes si cerrás esta parte. Solo tenés que recargar la página luego de abrir la consola del navegador para ver los destinos y precios.");
   mostrardestinos(destino);
@@ -75,7 +75,7 @@ function pasajeproceso() {
   let destinodefinido = buscarDestino(ciudadseleccionada, destino);
   if (!destinodefinido) {
   alert("Ciudad no encontrada. Por favor, escribila exactamente como aparece en la lista.");
-  pasajeproceso(); 
+  return;
   }
   if (destinodefinido){
     let precioFinal = destinodefinido.precio;
