@@ -71,11 +71,12 @@ function pasajeproceso() {
   }
   alert("Consulta la consola del navegador para ver los destinos y precios. No te preocupes si cerrás esta parte. Solo tenés que recargar la página luego de abrir la consola del navegador para ver los destinos y precios.");
   mostrardestinos(destino);
-  let ciudadseleccionada = prompt("Escribe el nombre de la ciudad que deseas:");
-  let destinodefinido = buscarDestino(ciudadseleccionada, destino);
-  if (!destinodefinido) {
-  alert("Ciudad no encontrada. Por favor, escribila exactamente como aparece en la lista.");
-  }while (!destinodefinido);
+  do {
+    ciudadseleccionada = prompt("Escribe el nombre de la ciudad que deseas:");
+    destinodefinido = buscarDestino(ciudadseleccionada, destino);
+    if (!destinodefinido) {
+    alert("Ciudad no encontrada. Por favor, escribila exactamente como aparece en la lista.");
+  }} while (!destinodefinido);
   if (destinodefinido){
     let precioFinal = destinodefinido.precio;
     if (pais === "uruguay"){
