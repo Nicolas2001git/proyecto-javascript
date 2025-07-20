@@ -75,7 +75,7 @@ function pasajeproceso() {
   let destinodefinido = buscarDestino(ciudadseleccionada, destino);
   if (!destinodefinido) {
   alert("Ciudad no encontrada. Por favor, escribila exactamente como aparece en la lista.");
-  return;
+  pasajeproceso();
   }
   if (destinodefinido){
     let precioFinal = destinodefinido.precio;
