@@ -13,7 +13,7 @@
 </head>
 <body>
     <header> 
-    <h1>¿QUERES IRTE DE VIAJE?</h1>
+    <h1 id="inicioViaje">¿QUERES IRTE DE VIAJE?</h1>
     </header>
     <main>
         <h2 class="preguntas">Preguntas Frecuentes (FAQ)</h2>
@@ -26,7 +26,7 @@
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong class="respuesta">El simulador comienza preguntándote si te gusta viajar. Si respondés que sí, podrás elegir un país: Argentina, Brasil o Uruguay. Luego de seleccionar el país, el sistema mostrará por consola (no en pantalla) los destinos y sus precios. A partir de ahí, deberás cerrar los cuadros emergentes (alerts) y abrir la consola del navegador (F12) para ver la información.</strong>
+                        <strong class="respuesta">Hacés clic en el título "¿QUERÉS IRTE DE VIAJE?" y te va a preguntar si te gusta viajar. Si respondés que sí, vas a poder usar el simulador para elegir un país y ver destinos y precios.</strong>
                     </div>
                 </div>
             </div>
@@ -38,36 +38,34 @@
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong class="respuesta">Los destinos y precios se muestran en la consola del navegador inmediatamente después de elegir el país. Para verlos, cerrá los cuadros emergentes (alertas) que aparezcan y presioná F12 o hacé clic derecho → "Inspeccionar" → pestaña "Consola". Allí verás la lista completa.</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed pregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        ¿Qué hago después de ver los precios?
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong class="respuesta">Una vez que veas los precios y destinos en la consola, debés recargar la página (F5) para reiniciar el simulador y volver a realizar todo el proceso.</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed pregunta" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        ¿Puedo conocer más que solo precios y ciudades?
-                    </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong class="respuesta">Sí, en futuras versiones del simulador también vas a poder conocer las comidas y bebidas típicas de cada país. Esto te permitirá explorar mejor la cultura antes de decidir tu viaje.</strong>
+                        <strong class="respuesta">Los destinos se muestran en pantalla después de elegir el país. Luego podés escribir el nombre de la ciudad y consultar su precio. El resultado también aparece en pantalla.</strong>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+        <form id="formularioPais" class="formulario-completo">
+            <label for="pais" class="label-formulario">Seleccioná un país:</label>
+            <select id="pais" class="input-formulario" required>
+                <option value="">--Elegí uno--</option>
+                <option value="argentina">Argentina</option>
+                <option value="brasil">Brasil</option>
+                <option value="uruguay">Uruguay</option>
+            </select>
+            <button type="submit" class="boton-formulario">Ver destinos</button>
+        </form>
+        <div id="contenedorDestinos" class="resultado-formulario"></div>
+        <form id="formularioFiltro" class="formulario-completo" style="display: none;">
+            <label for="precioFiltro" class="label-formulario">Filtrar por precio máximo:</label>
+            <input type="number" id="precioFiltro" class="input-formulario" placeholder="Ej: 2000" />
+            <button type="submit" class="boton-formulario">Aplicar filtro</button>
+        </form>
+        <div id="resultadosFiltro" class="resultado-formulario"></div>
+        <form id="formularioRecuperar" class="formulario-completo">
+            <label for="inputTicket" class="label-formulario">¿Tenés un número de ticket?</label>
+            <input type="text" id="inputTicket" class="input-formulario" placeholder="Ej: TCK-1234" />
+            <button type="submit" class="boton-formulario">Recuperar destinos</button>
+        </form>
+        <div id="recuperacionResultado" class="resultado-formulario">Tus resultados aparecen acá</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 <script src="main.js"></script>
 </body>

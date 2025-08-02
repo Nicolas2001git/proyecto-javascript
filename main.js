@@ -1,105 +1,138 @@
-const ciudades_argentina = [
-  { ciudad: "Buenos Aires", precio: 3325},
-  { ciudad: "Córdoba", precio: 2231},
-  { ciudad: "Rosario", precio: 1365},
-  { ciudad: "Mendoza", precio: 2124},
-  { ciudad: "La Plata", precio: 552},
-  { ciudad: "San Miguel de Tucumán", precio: 612},
-  { ciudad: "Mar del Plata", precio: 1675},
-  { ciudad: "Salta", precio: 2151},
-  { ciudad: "Santa Fe", precio: 890},
-  { ciudad: "San Juan", precio: 340},
+const ciudades_argentina = JSON.parse(localStorage.getItem("ciudades_argentina")) || [
+  { ciudad: "Buenos Aires", precio: 3325 },
+  { ciudad: "Córdoba", precio: 2231 },
+  { ciudad: "Rosario", precio: 1365 },
+  { ciudad: "Mendoza", precio: 2124 },
+  { ciudad: "La Plata", precio: 552 },
+  { ciudad: "San Miguel de Tucumán", precio: 612 },
+  { ciudad: "Mar del Plata", precio: 1675 },
+  { ciudad: "Salta", precio: 2151 },
+  { ciudad: "Santa Fe", precio: 890 },
+  { ciudad: "San Juan", precio: 340 }
 ];
-const ciudades_brasil = [
-  { ciudad: "Río de Janeiro", precio: 1124},
-  { ciudad: "São Paulo", precio: 242},
-  { ciudad: "Salvador", precio: 3410},
-  { ciudad: "Brasilia", precio: 4550},
-  { ciudad: "Fortaleza", precio: 500},
-  { ciudad: "Belo Horizonte", precio: 600},
-  { ciudad: "Recife", precio: 750},
-  { ciudad: "Curitiba", precio: 800},
-  { ciudad: "Manaus", precio: 700},
+const ciudades_brasil = JSON.parse(localStorage.getItem("ciudades_brasil")) || [
+  { ciudad: "Río de Janeiro", precio: 1124 },
+  { ciudad: "São Paulo", precio: 242 },
+  { ciudad: "Salvador", precio: 3410 },
+  { ciudad: "Brasilia", precio: 4550 },
+  { ciudad: "Fortaleza", precio: 500 },
+  { ciudad: "Belo Horizonte", precio: 600 },
+  { ciudad: "Recife", precio: 750 },
+  { ciudad: "Curitiba", precio: 800 },
+  { ciudad: "Manaus", precio: 700 },
   { ciudad: "Porto Alegre", precio: 1000 }
 ];
-const ciudades_uruguay = [
+const ciudades_uruguay = JSON.parse(localStorage.getItem("ciudades_uruguay")) || [
   { ciudad: "Montevideo", precio: 1030 },
-  { ciudad: "Punta del Este", precio: 2009},
-  { ciudad: "Colonia del Sacramento", precio: 1002},
-  { ciudad: "Salto", precio: 4000},
-  { ciudad: "Paysandú", precio: 5200},
-  { ciudad: "Maldonado", precio: 6300},
-  { ciudad: "Rivera", precio: 7300},
-  { ciudad: "Tacuarembó", precio: 8200},
-  { ciudad: "Artigas", precio: 3030},
-  { ciudad: "Rocha", precio: 3005}
+  { ciudad: "Punta del Este", precio: 2009 },
+  { ciudad: "Colonia del Sacramento", precio: 1002 },
+  { ciudad: "Salto", precio: 4000 },
+  { ciudad: "Paysandú", precio: 5200 },
+  { ciudad: "Maldonado", precio: 6300 },
+  { ciudad: "Rivera", precio: 7300 },
+  { ciudad: "Tacuarembó", precio: 8200 },
+  { ciudad: "Artigas", precio: 3030 },
+  { ciudad: "Rocha", precio: 3005 }
 ];
-function mostrardestinos(destino) {
-  console.log("Destinos disponibles:");
-  for (let i = 0; i < destino.length; i++) {
-    console.log(`${destino[i].ciudad}: $${destino[i].precio} USD`);
-  }
+const inicioViaje = document.getElementById("inicioViaje");
+const formularioPais = document.getElementById("formularioPais");
+const seleccionarPais = document.getElementById("pais");
+const contenedorDestinos = document.getElementById("contenedorDestinos");
+const formularioFiltro = document.getElementById("formularioFiltro");
+const inputPrecio = document.getElementById("precioFiltro");
+const resultadosFiltro = document.getElementById("resultadosFiltro");
+const formularioRecuperar = document.getElementById("formularioRecuperar");
+const inputTicket = document.getElementById("inputTicket");
+const recuperacionResultado = document.getElementById("recuperacionResultado");
+let destinosActuales = [];
+function mostrarDestinos(lista) {
+  contenedorDestinos.innerHTML = `<p class="texto-inner"><strong>Destinos disponibles:</strong></p>`;
+  lista.forEach(ciudad => {
+  contenedorDestinos.innerHTML += `<p class="texto-inner">✅ ${ciudad.ciudad}: $${ciudad.precio}</p>`;
+});
 }
-function buscarDestino(ciudad, destino) {
-  return destino.find(function(aceptar) {
-    return aceptar.ciudad.toLowerCase() === ciudad.toLowerCase();
+inicioViaje.addEventListener("click", () => {
+  console.log("¿Queres irte de viaje?");
+  Swal.fire({
+    icon: "question",
+    title: "¿Te gusta viajar?",
+    text: "Elegí un país para ver los destinos disponibles.",
+    confirmButtonText: "¡Vamos!"
   });
+});
+function generarTicket() {
+  const numero = Math.floor(Math.random() * 9000) + 500;
+  return `TCK-${numero}`;
 }
-let viajar = confirm("¿Te gusta viajar?");
-if (viajar) {
-  alert("Tengo una propuesta.");
-  pasajeproceso();
-} else {
-  alert("Está bien, cada quien tiene sus gustos.");
-}
-function pasajeproceso() {
-  let pais = prompt("¿A qué país quieres viajar? (Argentina / Brasil / Uruguay)").toLowerCase();
-  let destino;
+formularioPais.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const pais = seleccionarPais.value;
   switch (pais) {
-  case "argentina":
-    destino = ciudades_argentina;
-    break;
-  case "brasil":
-    destino = ciudades_brasil;
-    break;
-  case "uruguay":
-    destino = ciudades_uruguay;
-    break;
-  default:
-    alert("País no disponible. Intenta de nuevo.");
-    pasajeproceso();
+    case "argentina":
+      destinosActuales = ciudades_argentina;
+      break;
+    case "brasil":
+      destinosActuales = ciudades_brasil;
+      break;
+    case "uruguay":
+      destinosActuales = ciudades_uruguay;
+      break;
   }
-  alert("Consulta la consola del navegador para ver los destinos y precios. No te preocupes si cerrás esta parte. Solo tenés que recargar la página luego de abrir la consola del navegador para ver los destinos y precios.");
-  mostrardestinos(destino);
-  do {
-    ciudadseleccionada = prompt("Escribe el nombre de la ciudad que deseas:");
-    destinodefinido = buscarDestino(ciudadseleccionada, destino);
-    if (!destinodefinido) {
-    alert("Ciudad no encontrada. Por favor, escribila exactamente como aparece en la lista.");
-  }} while (!destinodefinido);
-  if (destinodefinido){
-    let precioFinal = destinodefinido.precio;
-    if (pais === "uruguay"){
-      precioFinal = precioFinal * 0.79;
-      alert(`Te tengo excelentes noticias: al elegir Uruguay, recibís un descuento del 21%. Precio final: $${precioFinal.toFixed(2)} USD.`);
-    }
-    let mensajealcomprar = `El precio del pasaje a ${destinodefinido.ciudad} es de $${precioFinal.toFixed(2)} USD.`;
-    if (pais === "argentina") {
-    let cuotamensual = precioFinal / 12;
-    mensajealcomprar += `Además, como beneficio exclusivo, ¡tenés 12 cuotas sin interés de $${cuotamensual.toFixed(2)} USD cada una!¿Querés comprarlo?`
-  }
-   if (pais === "brasil") {
-    mensajealcomprar += ` ¡Y te llevás un cupón del 2x1 en caipirinhas en los bares de la playa!¿Queres tomar esta oportunidad?`;
-  }
-  let comprahecha = confirm(mensajealcomprar);
-  if (comprahecha) {
+  if (destinosActuales.length > 0) {
+    mostrarDestinos(destinosActuales);
+    formularioFiltro.style.display = "block";
+    resultadosFiltro.innerHTML = "";
+    const ticket = generarTicket();
+    localStorage.setItem(ticket, JSON.stringify(destinosActuales));
     Swal.fire({
-      title: "Muy bien!",
-      text: `Vacaciones para vos en ${destinodefinido.ciudad}, a disfrutar!`,
-      icon: "success"
+      icon: "success",
+      title: "¡Destinos cargados!",
+      text: `Tu número de ticket es: ${ticket}. Usalo para recuperar tus destinos más tarde.`,
+    });
+  }
+});
+formularioFiltro.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const precioMax = parseFloat(inputPrecio.value);
+  resultadosFiltro.innerHTML = `<p class="texto-inner"><strong>Filtrado por precio:</strong></p>`;
+  const filtrados = destinosActuales.filter(ciudad => ciudad.precio <= precioMax);
+  switch (true) {
+    case isNaN(precioMax) || precioMax <= 0:
+      resultadosFiltro.innerHTML += `<p class="texto-inner">⚠️ Ingresá un precio válido.</p>`;
+      break;
+    case filtrados.length === 0:
+      resultadosFiltro.innerHTML += `<p class="texto-inner">❌ No se encontraron destinos por debajo de $${precioMax}.</p>`;
+      Swal.fire({
+        icon: "error",
+        title: "Sin resultados",
+        text: `No se encontraron destinos con precio menor o igual a $${precioMax}.`,
+      });
+      break;
+    default:
+      filtrados.forEach(ciudad => {
+        resultadosFiltro.innerHTML += `<p class="texto-inner">🔍 ${ciudad.ciudad}: $${ciudad.precio}</p>`;
+      });
+      const ticketFiltrado = generarTicket();
+      localStorage.setItem(ticketFiltrado, JSON.stringify(filtrados));
+      Swal.fire({
+        icon: "success",
+        title: "¡Filtrado exitoso!",
+        text: `Los resultados filtrados se guardaron con el ticket: ${ticketFiltrado}`,
+      });
+      break;
+  }
+});
+formularioRecuperar.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const ticketIngresado = inputTicket.value.trim();
+  const datosGuardados = localStorage.getItem(ticketIngresado);
+  if (datosGuardados) {
+    const destinos = JSON.parse(datosGuardados);
+    recuperacionResultado.innerHTML = `<p class="texto-inner"><strong>Destinos recuperados con el ticket ${ticketIngresado}:</strong></p>`;
+    destinos.forEach(ciudad => {
+      recuperacionResultado.innerHTML += `<p class="texto-inner">📍 ${ciudad.ciudad} - $${ciudad.precio}</p>`;
     });
   } else {
-    alert("Compra cancelada.");
+    recuperacionResultado.innerHTML = `<p class="texto-inner">❌ No se encontró ningún ticket con ese número.</p>`;
   }
-}
-}
+});

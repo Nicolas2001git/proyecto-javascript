@@ -6,44 +6,52 @@
 header{
   background-color: #f9f9f9;
 }
-h1 {
+h1{
   font-family: "Bebas Neue", sans-serif;
-  font-weight: 480;
+  font-weight: 500;
   font-style: normal;
-  font-size: 48px;              
+  font-size: 48px; 
   text-align: center;
-  letter-spacing: 3px; 
-  padding: 10px 20px;        
-  color:rgb(194, 181, 181);
-  background-color: rgb(14, 11, 11);       
-  margin-bottom: 10px;   
+  padding: 15px 25px; 
+  letter-spacing: 2px; 
+  color: #ffffff; 
+  background-color: #2c2c2c; 
+  margin: 30px 20px ; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 h1:hover{
-  color:brown;
+  color:brown;; 
+  cursor: pointer;
+  text-decoration: underline;
 }
-.preguntas {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 450;
-  font-style: normal;
-  font-size: 42px;              
-  text-align: center;
-  padding: 10px 20px;
-  letter-spacing: 3px;         
-  color:rgb(194, 181, 181);
-  background-color: rgb(14, 11, 11);
-  margin-bottom: 25px;
-}
-.pregunta{
+.preguntas{
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 36px;              
+  font-size: 42px; 
   text-align: center;
-  padding: 5px 10px;
-  letter-spacing: 3px;         
-  color:rgb(194, 181, 181);
-  background-color: rgb(14, 11, 11);
-  margin-bottom: 25px;
+  padding: 15px 25px; 
+  letter-spacing: 2px; 
+  color: #ffffff; 
+  background-color: #2c2c2c; 
+  margin: 30px 20px; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+}
+.pregunta {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 40px; 
+  text-align: center;
+  padding: 15px 25px; 
+  letter-spacing: 2px; 
+  color: #ffffff; 
+  background-color: #2c2c2c; 
+  margin: 30px 20px; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
 }
 .pregunta:hover{
   text-decoration: underline;
@@ -61,5 +69,112 @@ body{
 }
 .respuesta:hover{
    color: #1a73e8;
+}
+.contenedor-boton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recomendacion{
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px; 
+  text-align: center;
+  padding: 15px 25px; 
+  letter-spacing: 3px; 
+  color: #ffffff; 
+  background-color: #2c2c2c; 
+  margin: 30px 20px; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+}
+.recomendacion:hover{
+  background-color: #a44130; 
+  transform: scale(1.05); 
+  cursor: pointer;
+}
+.formulario-completo {
+  background-color: #3b3b3b; 
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.label-formulario {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-formulario {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 10px 12px;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.input-formulario:focus {
+  outline: none;
+  box-shadow: 0 0 6px #1a73e8;
+}
+.boton-formulario {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #2c2c2c;
+  border: none;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.boton-formulario:hover {
+  background-color: #a44130;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.texto-inner {
+  font-family: "Tektur", cursive;
+  font-size: 20px;
+  color: #1a1a1a;
+  margin: 10px 0;
+  padding: 6px 10px;
+  border-left: 4px solid #2c2c2c;
+  background-color: #f4f4f4;
+  border-radius: 6px;
+}
+.texto-inner strong {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  color: #a44130;
+}
+
+.resultado-formulario {
+  background-color: #f4f4f4;
+  color: #2c2c2c;
+  font-family: "Tektur", cursive;
+  font-size: 18px;
+  padding: 25px 30px;
+  margin: 30px 20px;
+  border-radius: 15px;
+  border-left: 6px solid #a44130;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+.resultado-formulario:hover {
+  background-color: #ffffff;
+  box-shadow: 0 6px 14px rgba(83, 55, 55, 0.2);
+  transform: scale(1.01);
 }
 
