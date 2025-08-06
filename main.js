@@ -61,7 +61,7 @@ inicioViaje.addEventListener("click", () => {
   });
 });
 function generarTicket() {
-  const numero = Math.floor(Math.random() * 9000) + 500;
+  const numero = Math.floor(Math.random() * 9000) + 900;
   return `TCK-${numero}`;
 }
 formularioPais.addEventListener("submit", (event) => {
