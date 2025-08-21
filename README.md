@@ -40,8 +40,6 @@ SweetAlert2 → librería para alertas visuales y modernas.
 
 Abrir el proyecto en el navegador (index.html).
 
-Hacer clic en "¿QUERÉS IRTE DE VIAJE?" para iniciar el simulador.
-
 Seleccionar un país y ver la lista de destinos disponibles.
 
 Usar el filtro de precio máximo para reducir las opciones.
