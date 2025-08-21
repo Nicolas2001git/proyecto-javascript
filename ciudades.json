@@ -1,0 +1,61 @@
+{
+  "argentina": [
+    { "ciudad": "Buenos Aires", "precio": 3325 },
+    { "ciudad": "Córdoba", "precio": 2800 },
+    { "ciudad": "Mendoza", "precio": 1500 },
+    { "ciudad": "Bariloche", "precio": 1200 },
+    { "ciudad": "Salta", "precio": 600 },
+    { "ciudad": "Rosario", "precio": 900 },
+    { "ciudad": "Mar del Plata", "precio": 3050 },
+    { "ciudad": "San Juan", "precio": 1500 },
+    { "ciudad": "Tucumán", "precio": 650 },
+    { "ciudad": "Neuquén", "precio": 2850 },
+    { "ciudad": "La Plata", "precio": 2400 },
+    { "ciudad": "San Luis", "precio": 1300 }
+  ],
+  "brasil": [
+    { "ciudad": "Río de Janeiro", "precio": 3000 },
+    { "ciudad": "San Pablo", "precio": 1950 },
+    { "ciudad": "Salvador de Bahía", "precio": 1200 },
+    { "ciudad": "Brasilia", "precio": 1050 },
+    { "ciudad": "Fortaleza", "precio": 1980 },
+    { "ciudad": "Florianópolis", "precio": 1100 },
+    { "ciudad": "Recife", "precio": 1970 },
+    { "ciudad": "Curitiba", "precio": 1020 },
+    { "ciudad": "Manaos", "precio": 2400 },
+    { "ciudad": "Belém", "precio": 1670 },
+    { "ciudad": "Porto Alegre", "precio": 1080 }
+  ],
+  "uruguay": [
+    { "ciudad": "Montevideo", "precio": 3600 },
+    { "ciudad": "Punta del Este", "precio": 1875 },
+    { "ciudad": "Colonia del Sacramento", "precio": 1950 },
+    { "ciudad": "Paysandú", "precio": 720 },
+    { "ciudad": "Maldonado", "precio": 1880 },
+    { "ciudad": "Rivera", "precio": 1650 },
+    { "ciudad": "Salto", "precio": 2450 },
+    { "ciudad": "Mercedes", "precio": 1730 },
+    { "ciudad": "Durazno", "precio": 1610 }
+  ],
+  "chile": [
+    { "ciudad": "Santiago", "precio": 2100 },
+    { "ciudad": "Valparaíso", "precio": 1950 },
+    { "ciudad": "Viña del Mar", "precio": 2000 },
+    { "ciudad": "Puerto Montt", "precio": 2400 },
+    { "ciudad": "Punta Arenas", "precio": 2600 },
+    { "ciudad": "Antofagasta", "precio": 2200 },
+    { "ciudad": "La Serena", "precio": 2050 },
+    { "ciudad": "Concepción", "precio": 2150 },
+    { "ciudad": "Iquique", "precio": 2250 }
+  ],
+  "paraguay": [
+    { "ciudad": "Asunción", "precio": 1900 },
+    { "ciudad": "Encarnación", "precio": 2850 },
+    { "ciudad": "Ciudad del Este", "precio": 1870 },
+    { "ciudad": "Villarrica", "precio": 780 },
+    { "ciudad": "Caacupé", "precio": 1760 },
+    { "ciudad": "San Lorenzo", "precio": 1800 },
+    { "ciudad": "Pedro Juan Caballero", "precio": 1820 },
+    { "ciudad": "Coronel Oviedo", "precio": 1740 }
+  ]
+}

@@ -19,6 +19,7 @@ h1{
   margin: 30px 20px ; 
   border-radius: 12px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 h1:hover{
   color:brown;; 
@@ -38,6 +39,7 @@ h1:hover{
   margin: 30px 20px; 
   border-radius: 12px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  transition: all 0.3s ease;
 }
 .pregunta {
   font-family: "Bebas Neue", sans-serif;
@@ -52,6 +54,7 @@ h1:hover{
   margin: 30px 20px; 
   border-radius: 12px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  transition: all 0.3s ease;
 }
 .pregunta:hover{
   text-decoration: underline;
@@ -66,6 +69,7 @@ body{
   color: #333;
   font-size: 26px;
   margin-top: 10px;
+  transition: all 0.3s ease;
 }
 .respuesta:hover{
    color: #1a73e8;
@@ -88,6 +92,7 @@ body{
   margin: 30px 20px; 
   border-radius: 12px; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  transition: all 0.3s ease;
 }
 .recomendacion:hover{
   background-color: #a44130; 
@@ -171,4 +176,91 @@ body{
   box-shadow: 0 6px 14px rgba(83, 55, 55, 0.2);
   transform: scale(1.01);
 }
-
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+    margin: 15px 10px;
+    padding: 10px 15px;
+  }
+  .preguntas {
+    font-size: 24px;
+    margin: 15px 10px;
+    padding: 10px 15px;
+  }
+  .pregunta {
+    font-size: 22px;
+    margin: 15px 10px;
+    padding: 10px 15px;
+  }
+  .respuesta {
+    font-size: 16px;
+  }
+  .recomendacion {
+    font-size: 18px;
+    padding: 10px 15px;
+    margin: 15px 10px;
+  }
+  .label-formulario {
+    font-size: 16px;
+  }
+  .input-formulario {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  .boton-formulario {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+  .texto-inner {
+    font-size: 14px;
+  }
+  .resultado-formulario {
+    font-size: 14px;
+    padding: 15px 20px;
+    margin: 15px 10px;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+    margin: 20px 15px;
+    padding: 12px 18px;
+  }
+  .preguntas {
+    font-size: 32px;
+    margin: 20px 15px;
+    padding: 12px 18px;
+  }
+  .pregunta {
+    font-size: 30px;
+    margin: 20px 15px;
+    padding: 12px 18px;
+  }
+  .respuesta {
+    font-size: 20px;
+  }
+  .recomendacion {
+    font-size: 20px;
+    padding: 12px 18px;
+    margin: 20px 15px;
+  }
+  .label-formulario {
+    font-size: 18px;
+  }
+  .input-formulario {
+    font-size: 15px;
+    padding: 9px 12px;
+  }
+  .boton-formulario {
+    font-size: 18px;
+    padding: 9px 18px;
+  }
+  .texto-inner {
+    font-size: 16px;
+  }
+  .resultado-formulario {
+    font-size: 16px;
+    padding: 20px 25px;
+    margin: 20px 15px;
+  }
+}
