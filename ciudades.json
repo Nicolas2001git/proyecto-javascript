@@ -25,7 +25,7 @@
     { "ciudad": "Manaos", "precio": 2400 },
     { "ciudad": "Belém", "precio": 1670 },
     { "ciudad": "Porto Alegre", "precio": 1080 }
-  ],
+  ], 
   "uruguay": [
     { "ciudad": "Montevideo", "precio": 3600 },
     { "ciudad": "Punta del Este", "precio": 1875 },
