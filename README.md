@@ -52,8 +52,8 @@ Ingresar un ticket en el formulario de recuperación para volver a ver los desti
 
 El simulador fue diseñado para adaptarse automáticamente a cualquier dispositivo:
 
-Desktop → vista completa con formularios amplios y mayor tipografía.
+Desktop 
 
-Tablet → reorganización de márgenes y fuentes medianas.
+Tablet 
 
-Mobile → elementos más compactos, formularios adaptados y tipografía reducida.
+Mobile 
