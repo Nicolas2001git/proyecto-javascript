@@ -1,4 +1,4 @@
-let lista = {};              // 👉 ahora se llama lista
+let lista = {};             
 async function cargarLista() {
   try {
     const respuesta = await fetch("ciudades.json");
